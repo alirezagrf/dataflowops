@@ -17,6 +17,7 @@ def hello(user: str = "Marvin"):
     say_hi(user)
     healthcheck()
     print(pd.__version__)
+    print('hello_world!')
 
 
 if __name__ == "__main__":
