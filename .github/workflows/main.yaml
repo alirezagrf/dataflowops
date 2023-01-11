@@ -8,10 +8,10 @@ on:
 
 env:
   PROJECT: dataflowops
-  BLOCK: prod
+  BLOCK: rend-prefect-s3
   PREFECT_VERSION: 2.*
   ECS_CLUSTER: prefect
-  AWS_REGION: 'us-east-1'
+  AWS_REGION: 'eu-north-1'
 
 jobs:
   changes:
