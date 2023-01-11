@@ -3,7 +3,7 @@ from prefect import get_run_logger
 from dataflowops.postgres_utils import get_db_connection_string
 from flows.healthcheck import healthcheck  # to show how subflows can be packaged and imported
 import pandas as pd
-import gdal
+import scipy
 
 @task
 def say_hi(user_name: str):
@@ -20,7 +20,7 @@ def hello(user: str = "Marvin"):
     healthcheck()
     print(pd.__version__)
     print('hello_world!')
-    print(gdal.__version__)
+    print(scipy.__version__)
 
 
 if __name__ == "__main__":
