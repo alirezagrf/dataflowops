@@ -6,3 +6,4 @@ numpy
 FastAPI
 Seaborn
 scipy
+pyplot

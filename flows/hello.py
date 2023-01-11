@@ -19,7 +19,7 @@ def hello(user: str = "Marvin"):
     say_hi(user)
     healthcheck()
     print('pandas version:',pd.__version__)
-    print('hello_world!')
+    print('hello _ world!')
     print(' seaborn version:',scipy.__version__)
 
 
