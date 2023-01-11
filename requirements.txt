@@ -6,5 +6,4 @@ numpy
 FastAPI
 Seaborn
 scipy
-pyplot
-scipy
+Requests

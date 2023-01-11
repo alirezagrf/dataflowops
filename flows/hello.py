@@ -4,7 +4,6 @@ from dataflowops.postgres_utils import get_db_connection_string
 from flows.healthcheck import healthcheck  # to show how subflows can be packaged and imported
 import pandas as pd
 import seaborn
-
 @task
 def say_hi(user_name: str):
     logger = get_run_logger()
@@ -20,7 +19,7 @@ def hello(user: str = "M arvin"):
     healthcheck()
     print('pandas version:',pd.__version__)
     print('hello _ world!')
-    print(' seaborn version:',scipy.__version__)
+    print(' seaborn version:',seaborn.__version__)
 
 
 if __name__ == "__main__":
