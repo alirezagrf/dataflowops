@@ -5,3 +5,4 @@ pandas
 numpy
 FastAPI
 Seaborn
+gdal
