@@ -1,8 +1,12 @@
 {
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:133525674937:task-definition/dataflowops:2",
     "containerDefinitions": [
         {
             "name": "dataflowops",
-            "image": "338306982838.dkr.ecr.us-east-1.amazonaws.com/dataflowops",
+            "image": "133525674937.dkr.ecr.eu-north-1.amazonaws.com/dataflowops:9fb265aa527c1d6e203a5b3fc6ae550c4f23efe7",
+            "cpu": 0,
+            "links": [],
+            "portMappings": [],
             "essential": true,
             "entryPoint": [
                 "bash",
@@ -11,33 +15,114 @@
             "command": [
                 "prefect agent start -q dataflowops"
             ],
+            "environment": [
+                {
+                    "name": "AWS_RETRY_MODE",
+                    "value": "adaptive"
+                },
+                {
+                    "name": "AWS_MAX_ATTEMPTS",
+                    "value": "10"
+                },
+                {
+                    "name": "PREFECT_LOGGING_LEVEL",
+                    "value": "INFO"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
             "secrets": [
                 {
-                    "name": "PREFECT_WORKSPACE",
-                    "valueFrom": "arn:aws:ssm:us-east-1:338306982838:parameter/PREFECT_WORKSPACE"
+                    "name": "PREFECT_API_URL",
+                    "valueFrom": "arn:aws:ssm:eu-north-1:133525674937:parameter/PREFECT_API_URL"
                 },
                 {
                     "name": "PREFECT_API_KEY",
-                    "valueFrom": "arn:aws:ssm:us-east-1:338306982838:parameter/PREFECT_API_KEY"
+                    "valueFrom": "arn:aws:ssm:eu-north-1:133525674937:parameter/PREFECT_API_KEY"
                 }
             ],
+            "stopTimeout": 120,
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-group": "dataflowops",
-                    "awslogs-region": "us-east-1",
+                    "awslogs-region": "eu-north-1",
                     "awslogs-stream-prefix": "dataflowops"
-                }
-            }
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
         }
     ],
     "family": "dataflowops",
-    "taskRoleArn": "arn:aws:iam::338306982838:role/dataflowops_ecs_task_role",
-    "executionRoleArn": "arn:aws:iam::338306982838:role/dataflowops_ecs_execution_role",
+    "taskRoleArn": "arn:aws:iam::133525674937:role/dataflowops_ecs_task_role",
+    "executionRoleArn": "arn:aws:iam::133525674937:role/dataflowops_ecs_execution_role",
     "networkMode": "awsvpc",
+    "revision": 2,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.container-ordering"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "ecs.capability.secrets.ssm.environment-variables"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "512",
-    "memory": "1024"
+    "cpu": "256",
+    "memory": "512",
+    "registeredAt": "2023-01-11T12:01:16.110Z",
+    "registeredBy": "arn:aws:iam::133525674937:root",
+    "tags": [
+        {
+            "key": "ecs:taskDefinition:createdFrom",
+            "value": "ecs-console-v2"
+        },
+        {
+            "key": "ecs:taskDefinition:stackId",
+            "value": "arn:aws:cloudformation:eu-north-1:133525674937:stack/ECS-Console-V2-TaskDefinition-b20a078f-962d-4ef3-aa23-943bbcfabb99/a3a21db0-91a7-11ed-8abb-0e337b94da06"
+        }
+    ]
 }
