@@ -7,3 +7,4 @@ FastAPI
 Seaborn
 scipy
 pyplot
+scipy

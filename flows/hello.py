@@ -15,7 +15,7 @@ def say_hi(user_name: str):
 
 
 @flow
-def hello(user: str = "Marvin"):
+def hello(user: str = "M arvin"):
     say_hi(user)
     healthcheck()
     print('pandas version:',pd.__version__)
