@@ -20,7 +20,7 @@ def hello(user: str = "Marvin"):
     healthcheck()
     print('pandas version:',pd.__version__)
     print('hello_world!')
-    print('seaborn version:',scipy.__version__)
+    print(' seaborn version:',scipy.__version__)
 
 
 if __name__ == "__main__":
