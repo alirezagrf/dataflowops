@@ -10,7 +10,7 @@ env:
   PROJECT: dataflowops
   BLOCK: rend-prefect-s3
   PREFECT_VERSION: 2.*
-  ECS_CLUSTER: rend-prefect-s3
+  ECS_CLUSTER: prefect
   AWS_REGION: 'eu-north-1'
   ECS_TASK_DEFINITION: task-definition.json
 

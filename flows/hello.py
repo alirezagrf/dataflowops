@@ -17,7 +17,7 @@ def say_hi(user_name: str):
 def hello(user: str = "M arvin"):
     say_hi(user)
     healthcheck()
-    print('pandas version:',pd.__version__)
+    print('pandas v_ersion:',pd.__version__)
     print('hello _ world!')
     print(' seaborn version:',seaborn.__version__)
 
