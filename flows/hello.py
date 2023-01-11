@@ -10,6 +10,7 @@ def say_hi(user_name: str):
     logger.info("Hello from Prefect 2.0, %s!", user_name)
     conn_str = get_db_connection_string(user=user_name, password="42")
     logger.info("Conection string: %s", conn_str)
+    print('Hello to new ECS taskdefinition!')
 
 
 @flow
