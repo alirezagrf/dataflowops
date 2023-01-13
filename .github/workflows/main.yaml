@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print
-        run: echo "This actioin is ran with branch_ref as $GITHUB_REF and the last commit hash $GITHUB_SHA" >> $GITHUB_STEP_SUMMARY
+        run: echo "This actioin is ran with branch_ref as" $GITHUB_REF "and the last commit hash" $GITHUB_SHA >> $GITHUB_STEP_SUMMARY
         
   # changes:
   #   name: Code & dependency changes
