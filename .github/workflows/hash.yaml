@@ -1,4 +1,5 @@
 name: last commit hash
+
 on:
   pull_request:
     types: [opened]
@@ -6,7 +7,7 @@ on:
 
 jobs:
   changes:
-  runs-on: Ubuntu-latest
-  strps:
+  runs-on: ubuntu-latest
+  steps:
     -name: print information
     run:  echo "reference branch:" $GITHUB_REF "  latest sha:" GITHUB_SHA >> $GITHUB_STEP_SUMMARY
