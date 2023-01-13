@@ -10,4 +10,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: print information
-    run:  echo "reference branch:" $GITHUB_REF "  latest sha:" GITHUB_SHA >> $GITHUB_STEP_SUMMARY
+      run:  echo "reference branch:" $GITHUB_REF "  latest sha:" GITHUB_SHA >> $GITHUB_STEP_SUMMARY
