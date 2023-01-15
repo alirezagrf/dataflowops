@@ -19,7 +19,7 @@ def hello(user: str = "M arvin"):
     healthcheck()
     print('pandas v_ersion:',pd.__version__)
     print('hello _ world!')
-    print(' seaborn version:',seaborn.__version__)
+    print(' seaborn _version:',seaborn.__version__)
 
 
 if __name__ == "__main__":
