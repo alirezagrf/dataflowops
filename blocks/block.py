@@ -32,4 +32,4 @@ if __name__ == "__main__":
     # print(get_secret_value('dataflowops','MY_SECRET'))
     secret = 'MY_SECRET'
     output = run_command(f"echo ${{secrets.{secret}}}")
-    print(output)
+    print('the secret is:',output)
