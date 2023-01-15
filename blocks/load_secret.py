@@ -23,6 +23,6 @@ if __name__ == "__main__":
     for secret in secrets:
         command_s = f'echo "{secret}=$' + "{{" + f"secrets.{secret}" + '}}" >> $GITHUB_ENV'
         print(command_s)
-        # os.system(command_s)
+        os.system(command_s)
         print(f"{secret} added to ENV")
     
