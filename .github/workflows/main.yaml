@@ -112,7 +112,7 @@ jobs:
 
       - name: Save blocks
         run: |
-          prefect blocks register -f blocks/block.py
+          python3 blocks/block.py
 
       - name: Deploy flows to S3
         id: build
