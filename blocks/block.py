@@ -19,5 +19,5 @@ def get_secret_value(repo_name, secret_name):
 
 if __name__ == "__main__":
     # Secret(value=get_secret_value('dataflowops','MY_SECRET')).save(name='my-secret',overwrite=True)
-    print(sys.argv)
+    print(sys.argv['Object'])
     # print(get_secret_value('dataflowops','MY_SECRET'))
