@@ -1,7 +1,16 @@
 # import requests
 # import json
 # from prefect.blocks.system import Secret
-import os,sys
+import os,sys,subprocess
+
+
+def run_command(command):
+    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    return stdout.decode('utf-8')
+
+
+
 
 def get_secret_value(repo_name, secret_name):
     # Set up the authentication for the Github API
@@ -19,5 +28,8 @@ def get_secret_value(repo_name, secret_name):
 
 if __name__ == "__main__":
     # Secret(value=get_secret_value('dataflowops','MY_SECRET')).save(name='my-secret',overwrite=True)
-    print(type(sys.argv[-1]))
+    # print(type(sys.argv[-1]))
     # print(get_secret_value('dataflowops','MY_SECRET'))
+    secret = 'MY_SECRET'
+    output = run_command(f"echo ${{secrets.{secret}}}")
+    print(output)
