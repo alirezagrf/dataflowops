@@ -1,7 +1,7 @@
 import requests
 import json
 from prefect.blocks.system import Secret
-import os
+import os,sys
 
 def get_secret_value(repo_name, secret_name):
     # Set up the authentication for the Github API
@@ -19,5 +19,5 @@ def get_secret_value(repo_name, secret_name):
 
 if __name__ == "__main__":
     # Secret(value=get_secret_value('dataflowops','MY_SECRET')).save(name='my-secret',overwrite=True)
-
-    print(get_secret_value('dataflowops','MY_SECRET'))
+    print(sys.argv)
+    # print(get_secret_value('dataflowops','MY_SECRET'))
