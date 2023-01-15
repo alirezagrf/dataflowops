@@ -1,10 +1,11 @@
 import requests
 import json
 from prefect.blocks.system import Secret
+import os
 
 def get_secret_value(repo_name, secret_name):
     # Set up the authentication for the Github API
-    auth_token = "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"
+    auth_token = os.getenv('GITHUB_TOKEN')
     headers = {"Authorization": f"Token {auth_token}"}
     
     # Call the Github API to get the list of secrets for the repository
