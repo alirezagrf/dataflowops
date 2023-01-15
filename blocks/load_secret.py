@@ -1,6 +1,6 @@
 import requests
 import json
-import os
+import os,subprocess
 
 def get_secrets(repo_name):
 
@@ -24,5 +24,6 @@ if __name__ == "__main__":
         command_s = f'echo "{secret}=$' + "{{" + f"secrets.{secret}" + '}}" >> $GITHUB_ENV'
         print(command_s)
         os.system(command_s)
+        subprocess.call(command_s, shell=True)
         print(f"{secret} added to ENV")
     
