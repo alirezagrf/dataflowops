@@ -24,6 +24,6 @@ if __name__ == "__main__":
         command_s = f'"{secret}=$' + "{{" + f"secrets.{secret}" + '}}"'
         # print(command_s)
         # os.system(command_s)
-        subprocess.call(['call',command_s,' >> $GITHUB_ENV'], shell=True)
+        subprocess.call(['echo',command_s,' >> $GITHUB_ENV'], shell=True)
         # print(f"{secret} added to ENV")
     
