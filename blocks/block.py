@@ -7,7 +7,9 @@ import os,sys,subprocess
 def run_command(command):
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()
-    return stdout.decode('utf-8')
+    # return stdout.decode('utf-8')
+    return stdout
+
 
 
 
@@ -31,5 +33,5 @@ if __name__ == "__main__":
     # print(type(sys.argv[-1]))
     # print(get_secret_value('dataflowops','MY_SECRET'))
     secret = 'MY_SECRET'
-    output = run_command(f"echo ${{secrets.{secret}}}")
+    output = run_command("echo ${{"+f"secrets.{secret}"+"}}")
     print('the secret is:',output)
