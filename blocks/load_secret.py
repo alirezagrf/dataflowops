@@ -21,9 +21,9 @@ if __name__ == "__main__":
 
     secrets = get_secrets('dataflowops')
     for secret in secrets:
-        command_s = f'"{secret}=$' + "{{" + f"secrets.{secret}" + '}}" >> $GITHUB_ENV'
+        command_s = f'"{secret}=$' + "{{" + f"secrets.{secret}" + '}}"'
         # print(command_s)
         # os.system(command_s)
-        subprocess.call(['call',command_s], shell=True)
+        subprocess.call(['call',command_s,' >> $GITHUB_ENV'], shell=True)
         # print(f"{secret} added to ENV")
     
