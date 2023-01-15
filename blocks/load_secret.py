@@ -5,7 +5,8 @@ import os
 def get_secrets(repo_name):
 
     # Set up the authentication for the Github API
-    auth_token = os.getenv('GITHUB_TOKEN')
+    # auth_token = os.getenv('GITHUB_TOKEN')
+    auth_token = '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'
     headers = {"Authorization": f"Bearer {auth_token}"}
     
     # Call the Github API to get the list of secrets for the repository
