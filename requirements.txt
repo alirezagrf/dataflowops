@@ -1,10 +1,2 @@
 s3fs
 prefect-aws
-sqlalchemy
-pandas
-numpy
-FastAPI
-Seaborn
-scipy
-Requests
-urllib3
