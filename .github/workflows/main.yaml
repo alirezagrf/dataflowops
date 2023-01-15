@@ -110,9 +110,13 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           mask-aws-account-id: 'no'
 
+      - name: load secret as Env Var
+        run: |
+          python3 blocks/load_secret.py
+
       - name: Save blocks
         run: |
-          python3 blocks/block.py
+          prefect block register -f blocks/block.py
 
       - name: Deploy flows to S3
         id: build
