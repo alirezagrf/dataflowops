@@ -20,11 +20,12 @@ def get_secrets(repo_name):
 if __name__ == "__main__":
 
     secrets = get_secrets('dataflowops')
-    for secret in secrets:
-        command_s = f'echo "${secret}=$' + "{{" + f"secrets.{secret}" + '}}"'
-        # >> $GITHUB_ENV
-        # print(command_s)
-        # os.system(command_s)
-        subprocess.call([command_s], shell=True)
-        # print(f"{secret} added to ENV")
+    os.system('echo "${MY_SECRET}=${{secrets.MY_SECRET}}" >> $GITHUB_ENV')
+    # for secret in secrets:
+    #     command_s = f'echo "${secret}=$' + "{{" + f"secrets.{secret}" + '}}"'
+    #     # >> $GITHUB_ENV
+    #     # print(command_s)
+    #     # os.system(command_s)
+    #     subprocess.call([command_s], shell=True)
+    #     # print(f"{secret} added to ENV")
     
